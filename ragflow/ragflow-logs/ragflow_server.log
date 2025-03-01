@@ -1,0 +1,78 @@
+2025-03-01 23:29:26,803 INFO     19 ragflow_server log path: /ragflow/logs/ragflow_server.log, log levels: {'peewee': 'WARNING', 'pdfminer': 'WARNING', 'root': 'INFO'}
+2025-03-01 23:29:37,507 INFO     19 init database on cluster mode successfully
+2025-03-01 23:29:58,979 INFO     19 
+        ____   ___    ______ ______ __               
+       / __ \ /   |  / ____// ____// /____  _      __
+      / /_/ // /| | / / __ / /_   / // __ \| | /| / /
+     / _, _// ___ |/ /_/ // __/  / // /_/ /| |/ |/ / 
+    /_/ |_|/_/  |_|\____//_/    /_/ \____/ |__/|__/                             
+
+    
+2025-03-01 23:29:58,980 INFO     19 RAGFlow version: v0.16.0 slim
+2025-03-01 23:29:58,980 INFO     19 project base: /ragflow
+2025-03-01 23:29:58,980 INFO     19 Current configs, from /ragflow/conf/service_conf.yaml:
+	ragflow: {'host': '0.0.0.0', 'http_port': 9380}
+	mysql: {'name': 'rag_flow', 'user': 'root', 'password': '********', 'host': 'mysql', 'port': 3306, 'max_connections': 100, 'stale_timeout': 30}
+	minio: {'user': 'rag_flow', 'password': '********', 'host': 'minio:9000'}
+	es: {'hosts': 'http://es01:9200', 'username': 'elastic', 'password': '********'}
+	infinity: {'uri': 'infinity:23817', 'db_name': 'default_db'}
+	redis: {'db': 1, 'password': '********', 'host': 'redis:6379'}
+2025-03-01 23:29:58,980 INFO     19 Use Elasticsearch http://es01:9200 as the doc engine.
+2025-03-01 23:29:59,108 INFO     19 GET http://es01:9200/ [status:200 duration:0.125s]
+2025-03-01 23:29:59,114 INFO     19 HEAD http://es01:9200/ [status:200 duration:0.006s]
+2025-03-01 23:29:59,115 INFO     19 Elasticsearch http://es01:9200 is healthy.
+2025-03-01 23:29:59,126 WARNING  19 Load term.freq FAIL!
+2025-03-01 23:29:59,134 WARNING  19 Realtime synonym is disabled, since no redis connection.
+2025-03-01 23:29:59,145 WARNING  19 Load term.freq FAIL!
+2025-03-01 23:29:59,154 WARNING  19 Realtime synonym is disabled, since no redis connection.
+2025-03-01 23:29:59,154 INFO     19 MAX_CONTENT_LENGTH: 134217728
+2025-03-01 23:29:59,154 INFO     19 SERVER_QUEUE_MAX_LEN: 1024
+2025-03-01 23:29:59,154 INFO     19 SERVER_QUEUE_RETENTION: 3600
+2025-03-01 23:29:59,155 INFO     19 MAX_FILE_COUNT_PER_USER: 0
+2025-03-01 23:30:02,568 INFO     19 init web data success:0.9449074268341064
+2025-03-01 23:30:02,570 INFO     19 RAGFlow HTTP server start...
+2025-03-01 23:30:02,573 INFO     19 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9380
+ * Running on http://172.26.0.6:9380
+2025-03-01 23:30:02,574 INFO     19 [33mPress CTRL+C to quit[0m
+2025-03-01 23:30:02,722 ERROR    19 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required.
+Traceback (most recent call last):
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask_login/utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 178, in unauthorized
+    abort(401)
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/ragflow/.venv/lib/python3.10/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.Unauthorized: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required.
+2025-03-01 23:30:02,725 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:02] "GET /v1/user/info HTTP/1.1" 200 -
+2025-03-01 23:30:02,788 ERROR    19 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required.
+Traceback (most recent call last):
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask_login/utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 178, in unauthorized
+    abort(401)
+  File "/ragflow/.venv/lib/python3.10/site-packages/flask/helpers.py", line 272, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/ragflow/.venv/lib/python3.10/site-packages/werkzeug/exceptions.py", line 863, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.Unauthorized: 401 Unauthorized: The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required.
+2025-03-01 23:30:02,789 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:02] "GET /v1/kb/list?page=1&page_size=30&keywords= HTTP/1.1" 200 -
+2025-03-01 23:30:21,211 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:21] "POST /v1/user/login HTTP/1.1" 200 -
+2025-03-01 23:30:29,170 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:29] "POST /v1/user/register HTTP/1.1" 200 -
+2025-03-01 23:30:31,867 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:31] "POST /v1/user/login HTTP/1.1" 200 -
+2025-03-01 23:30:36,712 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:36] "GET /v1/user/info HTTP/1.1" 200 -
+2025-03-01 23:30:36,719 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:36] "GET /v1/kb/list?page=1&page_size=30&keywords= HTTP/1.1" 200 -
+2025-03-01 23:30:40,456 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:40] "GET /v1/user/info HTTP/1.1" 200 -
+2025-03-01 23:30:40,456 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:40] "GET /v1/dialog/list HTTP/1.1" 200 -
+2025-03-01 23:30:42,259 INFO     19 172.26.0.6 - - [01/Mar/2025 23:30:42] "GET /v1/kb/list HTTP/1.1" 200 -

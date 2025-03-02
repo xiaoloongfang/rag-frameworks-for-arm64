@@ -41,7 +41,6 @@ We've given the following container images with changsha-aicc versions:
 
 - Ragflow (adapted for ARM64): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/ragflow-slim:v0.16.0-arm64`
 - Elasticsearch (for network acceleration): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/elasticsearch:8.11.3`
-- Infinity (for network acceleration): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/infiniflow/infinity:v0.6.0-dev3`
 - MySQL (for network acceleration): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/mysql:8.0.39`
 - MinIO (for network acceleration): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/minio:RELEASE.2023-12-20T01-00-02Z`
 - Redis (for network acceleration): `swr.cn-central-232.csai.hunan.com.cn/changsha-aicc/valkey:8`
